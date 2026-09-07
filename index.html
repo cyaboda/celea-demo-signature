@@ -3041,6 +3041,10 @@ select {
 const API_URL =
 "https://script.google.com/macros/s/AKfycbz_-f9kBoM8sUsXhQ9BqC4MuiWM3H8QtZrAIO6-Fgw-GZsttL3mVH4GUk5mT_3ZqgwxcA/exec";
 
+const DEMO_SIGNATURE =
+window.location.hostname.includes("celea-demo-signature");
+
+
 const parametros =
 new URLSearchParams(window.location.search);
 
@@ -3374,6 +3378,18 @@ function consultaJSONP(
 ========================================================= */
 
 async function cargarInvitado() {
+
+  if (DEMO_SIGNATURE && !codigo) {
+    recibirInvitado({
+      ok: true,
+      invitado: "Invitado CELEA",
+      cupos: 2,
+      estado: "PENDIENTE",
+      asisten: 0,
+      acompanantes: ""
+    });
+    return;
+  }
 
   if (!codigo) {
 
@@ -4108,6 +4124,28 @@ async function guardarRSVP() {
   rsvpMensaje.textContent =
   "Guardando tu respuesta...";
 
+  if (DEMO_SIGNATURE) {
+    invitadoActual.estado =
+      respuestaRSVP === "SI"
+      ? "CONFIRMADO"
+      : "NO ASISTE";
+
+    invitadoActual.asisten =
+      respuestaRSVP === "SI"
+      ? cantidadAsistentes
+      : 0;
+
+    invitadoActual.acompanantes =
+      acompanantes.join("|");
+
+    setTimeout(function () {
+      rsvpConfirmar.disabled = false;
+      mostrarRespuestaGuardada(true);
+    }, 450);
+
+    return;
+  }
+
   const callback =
   "bodaRSVP_" +
   Date.now();
@@ -4817,6 +4855,18 @@ setInterval(
 cargarInvitado();
 
 </script>
+
+
+<div style="
+position:fixed;left:14px;bottom:14px;z-index:999;
+padding:8px 12px;border-radius:999px;
+background:rgba(255,255,255,.9);
+border:1px solid rgba(0,0,0,.08);
+font:600 11px/1.2 Arial,sans-serif;
+letter-spacing:.08em;text-transform:uppercase;
+color:#4f4945;backdrop-filter:blur(8px)">
+Demo Signature · CELEA
+</div>
 
 </body>
 
