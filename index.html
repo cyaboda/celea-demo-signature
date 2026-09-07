@@ -2420,6 +2420,214 @@ button:hover,
 }
 </style>
 
+
+<style id="signature-palette-and-decor-v2">
+:root{
+  --jm-cream:#F8F1ED;
+  --jm-lilac:#9FA0AD;
+  --jm-blue:#526AA4;
+  --jm-peri:#879BD0;
+  --jm-gold:#E4BD72;
+  --jm-ink:#344A76;
+}
+
+/* 1) Quitar por completo las ramitas y hojas originales */
+.floral,
+.ramita-central,
+.scroll-botanical,
+.final-botanica{
+  display:none !important;
+}
+
+/* 2) Nueva decoración: órbitas, halos y líneas finas */
+.portada::before,
+.segunda-seccion::before,
+.tercera-seccion::before,
+.evento-seccion::before,
+.dress-seccion::before,
+.regalos-seccion::before,
+.rsvp-seccion::before,
+.final-seccion::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  border:1px solid rgba(82,106,164,.20);
+  pointer-events:none;
+  z-index:0;
+}
+
+.portada::before{right:-210px;top:-190px}
+.segunda-seccion::before{left:-240px;bottom:-230px}
+.tercera-seccion::before{right:-250px;top:-220px;border-color:rgba(228,189,114,.40)}
+.evento-seccion::before{left:-220px;top:-210px}
+.dress-seccion::before{right:-230px;bottom:-220px}
+.regalos-seccion::before{left:-240px;bottom:-230px;border-color:rgba(228,189,114,.30)}
+.rsvp-seccion::before{right:-230px;top:-220px}
+.final-seccion::before{left:-250px;top:-220px;border-color:rgba(228,189,114,.28)}
+
+/* segundo aro fino */
+.portada::after,
+.tercera-seccion::after,
+.dress-seccion::after,
+.rsvp-seccion::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  border:1px solid rgba(135,155,208,.20);
+  pointer-events:none;
+  z-index:0;
+}
+.portada::after{left:-145px;bottom:-145px}
+.tercera-seccion::after{left:-130px;top:-120px}
+.dress-seccion::after{left:-140px;bottom:-130px}
+.rsvp-seccion::after{left:-130px;top:-120px}
+
+/* 3) Paleta real aplicada a toda la experiencia */
+html,body{
+  background:var(--jm-cream) !important;
+  color:var(--jm-ink) !important;
+}
+
+.portada,
+.segunda-seccion,
+.evento-seccion,
+.dress-seccion,
+.rsvp-seccion{
+  background:
+    radial-gradient(circle at 15% 15%,rgba(135,155,208,.08),transparent 30%),
+    radial-gradient(circle at 88% 82%,rgba(228,189,114,.08),transparent 28%),
+    var(--jm-cream) !important;
+}
+
+.tercera-seccion{
+  background:
+    linear-gradient(135deg,#EEF1F8 0%,#F8F1ED 58%,#F4E9D2 100%) !important;
+}
+
+.regalos-seccion{
+  background:
+    linear-gradient(135deg,var(--jm-ink) 0%,var(--jm-blue) 56%,#6777A2 100%) !important;
+  color:white !important;
+}
+
+.final-seccion{
+  background-color:var(--jm-ink) !important;
+}
+
+/* textos principales */
+.nombres,
+.titulo-seccion,
+.contador-numero,
+.evento-titulo,
+.dress-titulo,
+.rsvp-titulo,
+.final-titulo{
+  color:var(--jm-ink) !important;
+}
+
+.sobrelinea,
+.texto-pequeno,
+.etiqueta,
+.evento-kicker,
+.dress-kicker,
+.rsvp-kicker{
+  color:var(--jm-blue) !important;
+}
+
+.ampersand,
+.subtitulo,
+.evento-subtitulo,
+.dress-subtitulo{
+  color:var(--jm-peri) !important;
+}
+
+.separador,
+.linea,
+.divisor{
+  background:rgba(82,106,164,.28) !important;
+  border-color:rgba(82,106,164,.28) !important;
+}
+
+.separador::after{
+  background:var(--jm-cream) !important;
+  color:var(--jm-gold) !important;
+}
+
+/* botones */
+button,
+.boton,
+.btn,
+.rsvp-boton,
+.evento-boton{
+  border-color:var(--jm-blue) !important;
+}
+
+.boton-principal,
+.btn-primary,
+.rsvp-confirmar{
+  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri)) !important;
+  color:white !important;
+}
+
+/* tarjetas y contenedores */
+.evento-card,
+.dress-item,
+.rsvp-card,
+.rsvp-panel{
+  border-color:rgba(82,106,164,.15) !important;
+  box-shadow:0 18px 55px rgba(52,74,118,.07) !important;
+}
+
+/* Dress code: usar la paleta como apoyo, no como sección propia */
+.dress-dot:nth-child(1),
+.color-dot:nth-child(1){background:var(--jm-cream)!important}
+.dress-dot:nth-child(2),
+.color-dot:nth-child(2){background:var(--jm-lilac)!important}
+.dress-dot:nth-child(3),
+.color-dot:nth-child(3){background:var(--jm-peri)!important}
+.dress-dot:nth-child(4),
+.color-dot:nth-child(4){background:var(--jm-gold)!important}
+
+/* regalos */
+.regalos-seccion h2,
+.regalos-seccion h3,
+.regalos-seccion p{
+  color:white !important;
+}
+.regalo-card,
+.regalo-banco{
+  background:rgba(255,255,255,.08) !important;
+  border-color:rgba(255,255,255,.24) !important;
+}
+.regalos-seccion .boton,
+.regalos-seccion .btn{
+  background:white !important;
+  color:var(--jm-blue) !important;
+}
+
+/* RSVP */
+.rsvp-seccion{
+  background:
+    linear-gradient(180deg,#F8F1ED,#EEF1F8) !important;
+}
+
+/* halos de luz en vez de plantas */
+.portada .mancha-arriba,
+.portada .mancha-abajo{
+  background:
+    radial-gradient(circle,rgba(135,155,208,.16),rgba(135,155,208,.04) 58%,transparent 74%) !important;
+}
+
+::selection{
+  background:var(--jm-peri);
+  color:white;
+}
+</style>
+
 </head>
 
 <body>
