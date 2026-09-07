@@ -41,7 +41,7 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   background: #f7f1eb;
-  color: #344A76;
+  color: #4b342a;
   overflow-x: hidden;
 }
 
@@ -226,7 +226,7 @@ select {
   font-weight: 400;
   line-height: .95;
   letter-spacing: -2px;
-  color: #344A76;
+  color: #85452f;
 }
 
 .ampersand {
@@ -372,7 +372,7 @@ select {
   width: 105px;
   height: 78px;
   margin: 0 auto 28px;
-  color: #E4BD72;
+  color: #f1c5ab;
 }
 
 .ramita-central svg {
@@ -2385,7 +2385,7 @@ select {
 </style>
 
 
-<style id="signature-jonathan-mayra-palette">
+<style id="signature-jonathan-mayra-v5">
 :root{
   --jm-cream:#F8F1ED;
   --jm-lilac:#9FA0AD;
@@ -2393,233 +2393,432 @@ select {
   --jm-peri:#879BD0;
   --jm-gold:#E4BD72;
   --jm-ink:#344A76;
+  --jm-soft:#EEF1F8;
+  --jm-white:#FFFCFA;
+  --jm-line:rgba(52,74,118,.16);
 }
 
-html,body{
-  background:var(--jm-cream) !important;
-}
-
-/* Recolor the original Caro & Alex visual language, without rebuilding it */
-button,
-.btn,
-.boton,
-.rsvp-btn,
-.confirmar-btn{
-  border-color:var(--jm-blue) !important;
-}
-
-button:hover,
-.btn:hover,
-.boton:hover{
-  filter:saturate(.95);
-}
-
-::selection{
-  background:var(--jm-peri);
-  color:white;
-}
-</style>
-
-
-<style id="signature-palette-and-decor-v2">
-:root{
-  --jm-cream:#F8F1ED;
-  --jm-lilac:#9FA0AD;
-  --jm-blue:#526AA4;
-  --jm-peri:#879BD0;
-  --jm-gold:#E4BD72;
-  --jm-ink:#344A76;
-}
-
-/* 1) Quitar por completo las ramitas y hojas originales */
+/* Quitar el lenguaje botánico original */
 .floral,
 .ramita-central,
 .scroll-botanical,
 .final-botanica{
-  display:none !important;
+  display:none!important;
 }
 
-/* 2) Nueva decoración: órbitas, halos y líneas finas */
-.portada::before,
-.segunda-seccion::before,
-.tercera-seccion::before,
-.evento-seccion::before,
-.dress-seccion::before,
-.regalos-seccion::before,
-.rsvp-seccion::before,
-.final-seccion::before{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  border:1px solid rgba(82,106,164,.20);
-  pointer-events:none;
-  z-index:0;
-}
-
-.portada::before{right:-210px;top:-190px}
-.segunda-seccion::before{left:-240px;bottom:-230px}
-.tercera-seccion::before{right:-250px;top:-220px;border-color:rgba(228,189,114,.40)}
-.evento-seccion::before{left:-220px;top:-210px}
-.dress-seccion::before{right:-230px;bottom:-220px}
-.regalos-seccion::before{left:-240px;bottom:-230px;border-color:rgba(228,189,114,.30)}
-.rsvp-seccion::before{right:-230px;top:-220px}
-.final-seccion::before{left:-250px;top:-220px;border-color:rgba(228,189,114,.28)}
-
-/* segundo aro fino */
-.portada::after,
-.tercera-seccion::after,
-.dress-seccion::after,
-.rsvp-seccion::after{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  border:1px solid rgba(135,155,208,.20);
-  pointer-events:none;
-  z-index:0;
-}
-.portada::after{left:-145px;bottom:-145px}
-.tercera-seccion::after{left:-130px;top:-120px}
-.dress-seccion::after{left:-140px;bottom:-130px}
-.rsvp-seccion::after{left:-130px;top:-120px}
-
-/* 3) Paleta real aplicada a toda la experiencia */
+/* Base y contraste */
 html,body{
-  background:var(--jm-cream) !important;
-  color:var(--jm-ink) !important;
+  background:var(--jm-cream)!important;
+  color:var(--jm-ink)!important;
 }
 
+/* Nuevo motivo visual Signature: constelaciones, órbitas y marcos */
 .portada,
 .segunda-seccion,
+.tercera-seccion,
 .evento-seccion,
 .dress-seccion,
-.rsvp-seccion{
-  background:
-    radial-gradient(circle at 15% 15%,rgba(135,155,208,.08),transparent 30%),
-    radial-gradient(circle at 88% 82%,rgba(228,189,114,.08),transparent 28%),
-    var(--jm-cream) !important;
-}
-
-.tercera-seccion{
-  background:
-    linear-gradient(135deg,#EEF1F8 0%,#F8F1ED 58%,#F4E9D2 100%) !important;
-}
-
-.regalos-seccion{
-  background:
-    linear-gradient(135deg,var(--jm-ink) 0%,var(--jm-blue) 56%,#6777A2 100%) !important;
-  color:white !important;
-}
-
+.regalos-seccion,
+.rsvp-seccion,
 .final-seccion{
-  background-color:var(--jm-ink) !important;
+  position:relative;
+  overflow:hidden;
 }
 
-/* textos principales */
-.nombres,
-.titulo-seccion,
-.contador-numero,
-.evento-titulo,
-.dress-titulo,
-.rsvp-titulo,
-.final-titulo{
-  color:var(--jm-ink) !important;
+.portada::before,
+.tercera-seccion::before,
+.dress-seccion::before,
+.rsvp-seccion::before{
+  content:"";
+  position:absolute;
+  width:460px;height:460px;
+  border-radius:50%;
+  border:1px solid rgba(82,106,164,.18);
+  pointer-events:none;
+  z-index:0;
 }
+.portada::before{right:-235px;top:-230px}
+.tercera-seccion::before{left:-280px;top:-240px}
+.dress-seccion::before{right:-260px;bottom:-250px}
+.rsvp-seccion::before{left:-260px;bottom:-245px}
 
-.sobrelinea,
-.texto-pequeno,
-.etiqueta,
-.evento-kicker,
-.dress-kicker,
-.rsvp-kicker{
-  color:var(--jm-blue) !important;
+.portada::after,
+.evento-seccion::after,
+.regalos-seccion::after,
+.final-seccion::after{
+  content:"";
+  position:absolute;
+  width:300px;height:300px;
+  border-radius:50%;
+  border:1px solid rgba(228,189,114,.34);
+  pointer-events:none;
+  z-index:0;
 }
+.portada::after{left:-155px;bottom:-150px}
+.evento-seccion::after{right:-170px;top:-150px}
+.regalos-seccion::after{left:-160px;bottom:-150px}
+.final-seccion::after{right:-160px;top:-150px}
 
-.ampersand,
-.subtitulo,
-.evento-subtitulo,
-.dress-subtitulo{
-  color:var(--jm-peri) !important;
+/* PORTADA: ADN de Caro & Alex, pero más editorial */
+.portada{
+  background:
+    radial-gradient(circle at 16% 18%,rgba(135,155,208,.13),transparent 27%),
+    radial-gradient(circle at 88% 82%,rgba(228,189,114,.10),transparent 24%),
+    var(--jm-cream)!important;
 }
-
-.separador,
-.linea,
-.divisor{
-  background:rgba(82,106,164,.28) !important;
-  border-color:rgba(82,106,164,.28) !important;
+.mancha-arriba{
+  width:330px!important;height:330px!important;
+  background:radial-gradient(circle,rgba(135,155,208,.18),rgba(135,155,208,.04) 60%,transparent 72%)!important;
 }
-
+.mancha-abajo{
+  width:380px!important;height:380px!important;
+  background:radial-gradient(circle,rgba(228,189,114,.14),rgba(228,189,114,.03) 60%,transparent 72%)!important;
+}
+.linea-vertical{
+  background:linear-gradient(to bottom,transparent,rgba(82,106,164,.17),transparent)!important;
+}
+.sobrelinea{color:var(--jm-blue)!important}
+.nombres{color:var(--jm-ink)!important}
+.ampersand{color:var(--jm-peri)!important}
+.separador{
+  background:rgba(82,106,164,.26)!important;
+  position:relative;
+}
 .separador::after{
-  background:var(--jm-cream) !important;
-  color:var(--jm-gold) !important;
+  content:"✦";
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  background:var(--jm-cream);
+  padding:0 10px;
+  color:var(--jm-gold);
+  font-size:12px;
+}
+.texto-invitacion{color:var(--jm-blue)!important}
+#nombreInvitado{color:#493B4C!important}
+#cupos{color:#6F7280!important}
+.boton{
+  background:transparent!important;
+  border:1px solid var(--jm-blue)!important;
+  color:var(--jm-blue)!important;
+  border-radius:999px!important;
+  padding:15px 30px!important;
+  box-shadow:0 14px 40px rgba(52,74,118,.08)!important;
+  transition:all .35s ease!important;
+}
+.boton:hover{
+  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri))!important;
+  color:white!important;
+  transform:translateY(-2px);
+  box-shadow:0 18px 44px rgba(52,74,118,.18)!important;
+}
+.detalle-inferior{color:var(--jm-lilac)!important}
+
+/* Suavizar apertura y entrada de la siguiente escena */
+.portada{
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1),filter 1s ease!important;
+}
+.portada.saliendo{
+  opacity:0!important;
+  transform:scale(1.025)!important;
+  filter:blur(10px);
 }
 
-/* botones */
-button,
-.boton,
-.btn,
-.rsvp-boton,
+/* VERSÍCULO: FOTO1 como escena cinematográfica */
+.segunda-seccion{
+  min-height:100svh!important;
+  background:
+    linear-gradient(180deg,rgba(35,53,91,.38),rgba(35,53,91,.60)),
+    url("FOTO1.jpg") center/cover no-repeat!important;
+  color:white!important;
+}
+.segunda-seccion::before{
+  content:"01";
+  position:absolute;
+  right:6vw;bottom:5vh;
+  font-family:Georgia,serif;
+  font-size:clamp(68px,10vw,150px);
+  color:rgba(255,255,255,.08);
+  z-index:0;
+}
+.segunda-contenido{
+  position:relative;z-index:2;
+  max-width:900px!important;
+  padding:64px 28px!important;
+}
+.segunda-nombres{
+  color:#E8EAF0!important;
+  letter-spacing:.34em!important;
+}
+.versiculo{
+  color:white!important;
+  text-shadow:0 3px 24px rgba(20,28,47,.22);
+  font-size:clamp(34px,4.4vw,64px)!important;
+  line-height:1.22!important;
+  max-width:880px!important;
+}
+.referencia,
+.fecha-boda,
+.desliza,
+.flecha{
+  color:#F3F1F4!important;
+}
+.linea-fecha{
+  background:rgba(255,255,255,.42)!important;
+}
+
+/* CUENTA REGRESIVA: claro, limpio, sin marrones */
+.tercera-seccion{
+  min-height:100svh!important;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(228,189,114,.14),transparent 25%),
+    linear-gradient(135deg,var(--jm-soft),var(--jm-cream) 58%,#F4E9D2)!important;
+}
+.tercera-etiqueta,
+.tercera-subtitulo,
+.contador-label,
+.tercera-fecha{color:var(--jm-blue)!important}
+.tercera-titulo,
+.contador-numero,
+.tercera-frase{color:var(--jm-ink)!important}
+.contador-item{border-color:rgba(82,106,164,.18)!important}
+.tercera-linea{background:rgba(82,106,164,.25)!important}
+
+/* EVENTO: FOTO2 y FOTO3 encajan completas y simétricas */
+.evento-seccion{
+  min-height:100svh!important;
+  background:linear-gradient(180deg,#FBF8F5,var(--jm-soft))!important;
+}
+.evento-foto{
+  width:min(27vw,430px)!important;
+  height:min(66svh,690px)!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  border:12px solid white;
+  box-shadow:0 22px 60px rgba(52,74,118,.13);
+  overflow:hidden;
+}
+.evento-foto-izquierda{
+  left:3vw!important;
+  transform:translateY(-50%) rotate(-2.5deg)!important;
+}
+.evento-foto-derecha{
+  right:3vw!important;
+  transform:translateY(-50%) rotate(2.5deg)!important;
+}
+.evento-foto img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.evento-centro{
+  width:min(40vw,610px)!important;
+  position:relative;z-index:3;
+}
+.evento-centro::before{
+  content:"03";
+  position:absolute;
+  left:50%;top:-100px;
+  transform:translateX(-50%);
+  font-size:86px;
+  color:rgba(52,74,118,.05);
+  font-family:Georgia,serif;
+}
+.evento-logo-marco{
+  background:linear-gradient(135deg,var(--jm-blue),var(--jm-peri))!important;
+  color:white!important;
+  border:none!important;
+}
+.evento-logo{display:none!important}
+.evento-monograma{
+  color:white;
+  font-family:Georgia,serif;
+  font-size:18px;
+  letter-spacing:.1em;
+}
+.evento-etiqueta,
+.evento-tipo,
+.evento-hora-label,
+.evento-nota{color:var(--jm-blue)!important}
+.evento-titulo,
+.evento-hora{color:var(--jm-ink)!important}
+.evento-subtitulo{color:var(--jm-peri)!important}
+.evento-linea{background:rgba(82,106,164,.24)!important}
+.evento-direccion{color:#717A91!important}
 .evento-boton{
-  border-color:var(--jm-blue) !important;
+  border-color:var(--jm-blue)!important;
+  color:var(--jm-blue)!important;
+  background:white!important;
+}
+.evento-boton:first-child{
+  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri))!important;
+  color:white!important;
+  border:0!important;
 }
 
-.boton-principal,
-.btn-primary,
-.rsvp-confirmar{
-  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri)) !important;
-  color:white !important;
+/* DRESS CODE: mantiene la sección original, con la nueva paleta */
+.dress-seccion{
+  min-height:100svh!important;
+  background:
+    radial-gradient(circle at 18% 20%,rgba(135,155,208,.12),transparent 28%),
+    var(--jm-cream)!important;
+}
+.dress-etiqueta{color:var(--jm-blue)!important}
+.dress-titulo{color:var(--jm-ink)!important}
+.dress-formal,
+.dress-descripcion{color:#68758E!important}
+.dress-linea{background:rgba(82,106,164,.22)!important}
+.dress-item{
+  background:rgba(255,255,255,.72)!important;
+  border:1px solid var(--jm-line)!important;
+  box-shadow:0 18px 55px rgba(52,74,118,.07)!important;
+}
+.dress-icono,
+.dress-genero{color:var(--jm-blue)!important}
+.dress-color:nth-child(1){background:var(--jm-cream)!important}
+.dress-color:nth-child(2){background:var(--jm-lilac)!important}
+.dress-color:nth-child(3){background:var(--jm-blue)!important}
+.dress-color:nth-child(4){background:var(--jm-peri)!important}
+.dress-color:nth-child(5){background:var(--jm-gold)!important}
+.dress-reservados,
+.dress-nota{color:#6E7890!important}
+
+/* REGALOS: pantalla completa, profundidad y legibilidad */
+.regalos-seccion{
+  min-height:100svh!important;
+  background:
+    radial-gradient(circle at 10% 90%,rgba(228,189,114,.12),transparent 26%),
+    linear-gradient(135deg,var(--jm-ink),var(--jm-blue) 58%,#6777A2)!important;
+  color:white!important;
+}
+.regalos-contenido{
+  min-height:100svh!important;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center!important;
+  padding:70px 24px!important;
+}
+.regalos-icono,
+.regalos-etiqueta{color:var(--jm-gold)!important}
+.regalos-titulo,
+.regalos-texto,
+.regalo-nota-pregunta{color:white!important}
+.regalos-linea{background:rgba(255,255,255,.28)!important}
+.banco-preview{
+  background:rgba(255,255,255,.08)!important;
+  border-color:rgba(255,255,255,.24)!important;
+}
+.banco-icono,
+.banco-preview-nombre,
+.banco-preview-titular{color:white!important}
+.regalos-boton,
+.regalo-nota-boton{
+  background:white!important;
+  color:var(--jm-blue)!important;
+  border-color:white!important;
 }
 
-/* tarjetas y contenedores */
-.evento-card,
-.dress-item,
-.rsvp-card,
-.rsvp-panel{
-  border-color:rgba(82,106,164,.15) !important;
-  box-shadow:0 18px 55px rgba(52,74,118,.07) !important;
-}
-
-/* Dress code: usar la paleta como apoyo, no como sección propia */
-.dress-dot:nth-child(1),
-.color-dot:nth-child(1){background:var(--jm-cream)!important}
-.dress-dot:nth-child(2),
-.color-dot:nth-child(2){background:var(--jm-lilac)!important}
-.dress-dot:nth-child(3),
-.color-dot:nth-child(3){background:var(--jm-peri)!important}
-.dress-dot:nth-child(4),
-.color-dot:nth-child(4){background:var(--jm-gold)!important}
-
-/* regalos */
-.regalos-seccion h2,
-.regalos-seccion h3,
-.regalos-seccion p{
-  color:white !important;
-}
-.regalo-card,
-.regalo-banco{
-  background:rgba(255,255,255,.08) !important;
-  border-color:rgba(255,255,255,.24) !important;
-}
-.regalos-seccion .boton,
-.regalos-seccion .btn{
-  background:white !important;
-  color:var(--jm-blue) !important;
-}
-
-/* RSVP */
+/* RSVP: original funcionalidad, con 2 cupos visibles y contraste correcto */
 .rsvp-seccion{
+  min-height:100svh!important;
   background:
-    linear-gradient(180deg,#F8F1ED,#EEF1F8) !important;
+    linear-gradient(180deg,var(--jm-cream),var(--jm-soft))!important;
+}
+.rsvp-contenido{
+  min-height:100svh!important;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center!important;
+  padding:70px 24px!important;
+}
+.rsvp-icono{color:var(--jm-gold)!important}
+.rsvp-etiqueta{color:var(--jm-blue)!important}
+.rsvp-titulo{color:var(--jm-ink)!important}
+.rsvp-subtitulo{color:#74809A!important}
+.rsvp-linea{background:rgba(82,106,164,.22)!important}
+.rsvp-panel{
+  background:rgba(255,255,255,.86)!important;
+  border:1px solid var(--jm-line)!important;
+  box-shadow:0 22px 65px rgba(52,74,118,.09)!important;
+}
+.rsvp-invitado-label,
+.rsvp-cupos,
+.rsvp-pregunta,
+.asistentes-label{color:#68758E!important}
+.rsvp-invitado{color:var(--jm-ink)!important}
+.rsvp-opcion{
+  border-color:var(--jm-blue)!important;
+  color:var(--jm-blue)!important;
+  background:white!important;
+}
+.rsvp-opcion.activo,
+.rsvp-confirmar{
+  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri))!important;
+  color:white!important;
+  border:0!important;
+}
+.acompanante-campo{
+  border-color:#D5DBE8!important;
+  color:var(--jm-ink)!important;
+  background:white!important;
 }
 
-/* halos de luz en vez de plantas */
-.portada .mancha-arriba,
-.portada .mancha-abajo{
+/* FINAL: FOTO4, pantalla completa y cierre más cinematográfico */
+.final-seccion{
+  min-height:100svh!important;
   background:
-    radial-gradient(circle,rgba(135,155,208,.16),rgba(135,155,208,.04) 58%,transparent 74%) !important;
+    linear-gradient(180deg,rgba(31,45,76,.24),rgba(31,45,76,.72)),
+    url("FOTO4.jpg") center/cover no-repeat!important;
+  color:white!important;
+}
+.final-velo-animado{
+  background:linear-gradient(120deg,rgba(135,155,208,.08),rgba(228,189,114,.08),transparent)!important;
+}
+.final-contenido{
+  min-height:100svh!important;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center!important;
+  padding:70px 24px!important;
+  position:relative;z-index:2;
+}
+.final-etiqueta{color:var(--jm-gold)!important}
+.final-titulo,
+.final-titulo span,
+.final-texto,
+.final-nombres,
+.final-fecha,
+.final-cierre,
+.final-monograma{
+  color:white!important;
+}
+.final-separador{background:rgba(255,255,255,.34)!important}
+
+/* Modal y elementos auxiliares */
+.modal-bancos-caja,
+.modal-nota-caja{
+  background:var(--jm-white)!important;
+  color:var(--jm-ink)!important;
+}
+.modal-bancos-titulo,
+.modal-nota-titulo{color:var(--jm-ink)!important}
+
+/* Móvil */
+@media(max-width:900px){
+  .evento-foto{
+    position:relative!important;
+    width:min(82vw,520px)!important;
+    height:52svh!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    transform:none!important;
+    margin:22px auto!important;
+  }
+  .evento-foto-izquierda{transform:rotate(-1.5deg)!important}
+  .evento-foto-derecha{transform:rotate(1.5deg)!important}
+  .evento-centro{width:min(90vw,620px)!important;margin:auto!important}
 }
 
 ::selection{
@@ -2718,7 +2917,7 @@ button,
         ABRIR INVITACIÓN
       </button>
 
-      <div class="detalle-inferior">Nuestra historia comienza aquí</div>
+      <div class="detalle-inferior">Descubre nuestra celebración</div>
     </div>
 
     <div id="error">
@@ -2830,17 +3029,17 @@ button,
 <section class="evento-seccion" id="eventoSeccion">
 
   <div class="evento-foto evento-foto-izquierda">
-    <img src="F1.jpeg" alt="">
+    <img src="FOTO2.jpg" alt="">
   </div>
 
   <div class="evento-foto evento-foto-derecha">
-    <img src="F2.jpeg" alt="">
+    <img src="FOTO3.jpg" alt="">
   </div>
 
   <div class="evento-centro">
 
     <div class="evento-logo-marco">
-      <img src="LOGO.png" class="evento-logo" alt="Karla Ramírez Event Studio">
+      <span class="evento-monograma">J · M</span>
     </div>
 
     <div class="evento-etiqueta">Aquí celebraremos nuestro sí</div>
@@ -3009,13 +3208,13 @@ button,
       <div class="banco-preview">
         <div class="banco-icono">◇</div>
         <div class="banco-preview-nombre">Banco Pichincha</div>
-        <div class="banco-preview-titular">Jonathan Pricila González Almeida</div>
+        <div class="banco-preview-titular">Jonathan Andrés Herrera Molina</div>
       </div>
 
       <div class="banco-preview">
         <div class="banco-icono">◇</div>
         <div class="banco-preview-nombre">Banco Guayaquil</div>
-        <div class="banco-preview-titular">Darling Mayra Mendoza Pérez</div>
+        <div class="banco-preview-titular">Mayra Sofía Andrade Cevallos</div>
       </div>
 
     </div>
