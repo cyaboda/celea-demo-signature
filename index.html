@@ -3042,7 +3042,8 @@ const API_URL =
 "https://script.google.com/macros/s/AKfycbz_-f9kBoM8sUsXhQ9BqC4MuiWM3H8QtZrAIO6-Fgw-GZsttL3mVH4GUk5mT_3ZqgwxcA/exec";
 
 const DEMO_SIGNATURE =
-window.location.hostname.includes("celea-demo-signature");
+window.location.hostname === "cyaboda.github.io" &&
+window.location.pathname.toLowerCase().includes("/celea-demo-signature");
 
 
 const parametros =
@@ -3101,7 +3102,9 @@ function obtenerCodigoInvitacion() {
 }
 
 const codigo =
-obtenerCodigoInvitacion();
+DEMO_SIGNATURE
+? ""
+: obtenerCodigoInvitacion();
 
 // Si venimos del 404 interno, recuperamos la URL bonita.
 const rutaBonitaPendiente =
