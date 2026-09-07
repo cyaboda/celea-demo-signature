@@ -2923,6 +2923,112 @@ html,body{
 }
 </style>
 
+
+<style id="signature-v7-rsvp-y-movimiento">
+/* RSVP: estados seleccionados realmente visibles */
+.asistente-numero{
+  border:1px solid rgba(82,106,164,.35)!important;
+  background:#fff!important;
+  color:var(--jm-blue)!important;
+  transition:all .28s ease!important;
+  box-shadow:0 6px 18px rgba(52,74,118,.05);
+}
+.asistente-numero:hover{
+  border-color:var(--jm-peri)!important;
+  transform:translateY(-1px);
+}
+.asistente-numero.seleccionado{
+  background:linear-gradient(135deg,var(--jm-blue),var(--jm-peri))!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 10px 26px rgba(82,106,164,.22)!important;
+  transform:scale(1.08);
+}
+.rsvp-opcion{
+  border:1px solid var(--jm-blue)!important;
+  background:#fff!important;
+  color:var(--jm-blue)!important;
+  transition:all .28s ease!important;
+}
+.rsvp-opcion.seleccionado{
+  background:linear-gradient(90deg,var(--jm-blue),var(--jm-peri))!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 10px 26px rgba(82,106,164,.18)!important;
+}
+
+/* Nuevo gesto animado Signature:
+   órbitas que se despliegan mientras haces scroll */
+.signature-motion{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+.motion-orbit{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(82,106,164,.18);
+  transform:scale(.62) rotate(-8deg);
+  opacity:.16;
+  transition:
+    transform .18s linear,
+    opacity .18s linear,
+    border-color .18s linear;
+  will-change:transform,opacity;
+}
+.motion-orbit.gold{
+  border-color:rgba(228,189,114,.38);
+}
+.motion-orbit::after{
+  content:"";
+  position:absolute;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--jm-peri);
+  box-shadow:0 0 0 8px rgba(135,155,208,.08);
+}
+.motion-orbit.gold::after{
+  background:var(--jm-gold);
+  box-shadow:0 0 0 8px rgba(228,189,114,.08);
+}
+.motion-orbit.a{
+  width:360px;height:360px;
+  right:-170px;top:12%;
+}
+.motion-orbit.a::after{left:44px;top:42px}
+.motion-orbit.b{
+  width:260px;height:260px;
+  left:-125px;bottom:8%;
+}
+.motion-orbit.b::after{right:34px;bottom:28px}
+.motion-orbit.c{
+  width:180px;height:180px;
+  right:6%;bottom:-70px;
+}
+.motion-orbit.c::after{left:22px;bottom:38px}
+
+/* pequeñas estrellas editoriales que aparecen con el avance */
+.motion-star{
+  position:absolute;
+  width:10px;height:10px;
+  transform:rotate(45deg) scale(.3);
+  background:var(--jm-gold);
+  opacity:0;
+  transition:transform .18s linear,opacity .18s linear;
+}
+.motion-star.s1{left:8%;top:18%}
+.motion-star.s2{right:12%;top:52%;background:var(--jm-peri)}
+.motion-star.s3{left:22%;bottom:14%;background:var(--jm-blue)}
+
+@media(max-width:720px){
+  .motion-orbit.a{width:260px;height:260px;right:-145px}
+  .motion-orbit.b{width:190px;height:190px;left:-110px}
+  .motion-orbit.c{display:none}
+}
+</style>
+
 </head>
 
 <body>
@@ -3028,6 +3134,14 @@ html,body{
 
 
 <section class="segunda-seccion" id="segundaSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="segunda-contenido">
 
@@ -3063,6 +3177,14 @@ html,body{
 
 
 <section class="tercera-seccion scroll-section" id="cuentaRegresiva">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="scroll-botanical botanica-izq">
     <svg viewBox="0 0 260 540">
@@ -3123,6 +3245,14 @@ html,body{
 
 
 <section class="evento-seccion" id="eventoSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="evento-foto evento-foto-izquierda">
     <img src="FOTO2.jpg" alt="">
@@ -3181,6 +3311,14 @@ html,body{
 
 
 <section class="dress-seccion scroll-section" id="dressSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="scroll-botanical botanica-izq">
     <svg viewBox="0 0 260 540">
@@ -3265,6 +3403,14 @@ html,body{
 
 
 <section class="regalos-seccion scroll-section" id="regalosSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="scroll-botanical botanica-izq">
     <svg viewBox="0 0 260 540">
@@ -3341,6 +3487,14 @@ html,body{
 
 
 <section class="rsvp-seccion scroll-section" id="rsvpSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="scroll-botanical botanica-izq">
     <svg viewBox="0 0 260 540">
@@ -3427,6 +3581,14 @@ html,body{
 
 
 <section class="final-seccion" id="finalSeccion">
+<div class="signature-motion" aria-hidden="true">
+  <span class="motion-orbit a"></span>
+  <span class="motion-orbit b gold"></span>
+  <span class="motion-orbit c"></span>
+  <span class="motion-star s1"></span>
+  <span class="motion-star s2"></span>
+  <span class="motion-star s3"></span>
+</div>
 
   <div class="final-velo-animado" aria-hidden="true"></div>
 
@@ -5407,6 +5569,57 @@ letter-spacing:.08em;text-transform:uppercase;
 color:#4f4945;backdrop-filter:blur(8px)">
 Demo Signature · CELEA
 </div>
+
+
+<script id="signature-scroll-motion">
+(function(){
+  const sections = Array.from(document.querySelectorAll(
+    ".segunda-seccion,.tercera-seccion,.evento-seccion,.dress-seccion,.regalos-seccion,.rsvp-seccion,.final-seccion"
+  ));
+
+  function clamp(v,min,max){ return Math.max(min,Math.min(max,v)); }
+
+  function updateSignatureMotion(){
+    const vh = window.innerHeight || 1;
+
+    sections.forEach(section=>{
+      const rect = section.getBoundingClientRect();
+      const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1);
+      const eased = 1 - Math.pow(1-progress,3);
+
+      const orbits = section.querySelectorAll(".motion-orbit");
+      orbits.forEach((orbit,i)=>{
+        const dir = i % 2 === 0 ? 1 : -1;
+        const scale = 0.58 + eased * 0.52;
+        const rotate = (-10 + eased * 34 * dir);
+        orbit.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+        orbit.style.opacity = String(0.08 + eased * 0.42);
+      });
+
+      const stars = section.querySelectorAll(".motion-star");
+      stars.forEach((star,i)=>{
+        const local = clamp((eased - i*0.12) / 0.72, 0, 1);
+        star.style.opacity = String(local * .78);
+        star.style.transform = `rotate(${45 + local*90}deg) scale(${0.25 + local*.9})`;
+      });
+    });
+  }
+
+  let ticking=false;
+  function requestUpdate(){
+    if(ticking) return;
+    ticking=true;
+    requestAnimationFrame(()=>{
+      updateSignatureMotion();
+      ticking=false;
+    });
+  }
+
+  window.addEventListener("scroll",requestUpdate,{passive:true});
+  window.addEventListener("resize",requestUpdate);
+  updateSignatureMotion();
+})();
+</script>
 
 </body>
 
