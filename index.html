@@ -2827,6 +2827,102 @@ html,body{
 }
 </style>
 
+
+<style id="signature-v6-ajustes-puntuales">
+/* IMAGEN II: quitar el número editorial 01 del versículo */
+.segunda-seccion::before{
+  content:none!important;
+  display:none!important;
+}
+
+/* IMAGEN III: frase y fecha dentro de la paleta */
+.gran-dia{
+  color:var(--jm-blue)!important;
+}
+.fecha-pequena{
+  color:var(--jm-peri)!important;
+}
+.contador-separador{
+  background:rgba(82,106,164,.24)!important;
+}
+
+/* IMAGEN IV: quitar por completo el filtro terracota de FOTO2 y FOTO3 */
+.evento-foto::before{
+  background:transparent!important;
+  opacity:0!important;
+}
+.evento-foto-izquierda::after{
+  background:linear-gradient(
+    to right,
+    transparent 68%,
+    rgba(238,241,248,.88) 100%
+  )!important;
+}
+.evento-foto-derecha::after{
+  background:linear-gradient(
+    to left,
+    transparent 68%,
+    rgba(238,241,248,.88) 100%
+  )!important;
+}
+.evento-foto img{
+  filter:none!important;
+  mix-blend-mode:normal!important;
+  opacity:1!important;
+}
+
+/* IMAGEN V: Dress Code legible y paleta correcta */
+.reservados-titulo{
+  color:var(--jm-blue)!important;
+  opacity:1!important;
+}
+.reservados-texto{
+  color:#68758E!important;
+  opacity:1!important;
+}
+.reservados-texto strong{
+  color:var(--jm-ink)!important;
+}
+.color-blanco{
+  background:#F8F1ED!important;
+  border:1px solid rgba(52,74,118,.16)!important;
+}
+.color-marfil{
+  background:#9FA0AD!important;
+}
+.color-beige{
+  background:#526AA4!important;
+}
+
+/* IMAGEN VI: regalos, etiqueta en dorado de paleta y botón pequeño/elegante */
+.regalos-etiqueta{
+  color:var(--jm-gold)!important;
+}
+.regalos-boton{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  align-self:center!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:max-content!important;
+  padding:12px 24px!important;
+  margin:25px auto 0!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.96)!important;
+  color:var(--jm-blue)!important;
+  border:1px solid rgba(255,255,255,.74)!important;
+  font-size:9px!important;
+  letter-spacing:2.2px!important;
+  box-shadow:0 12px 34px rgba(22,35,65,.12)!important;
+  transition:transform .3s ease,box-shadow .3s ease!important;
+}
+.regalos-boton:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 16px 40px rgba(22,35,65,.18)!important;
+}
+</style>
+
 </head>
 
 <body>
@@ -3826,7 +3922,7 @@ async function cargarInvitado() {
   if (DEMO_SIGNATURE && !codigo) {
     recibirInvitado({
       ok: true,
-      invitado: "Jonathan Rosero",
+      invitado: "Invitado CELEA",
       cupos: 2,
       estado: "PENDIENTE",
       asisten: 0,
